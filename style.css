@@ -9,10 +9,10 @@
 .card {
     /* background-color: rgb(226, 108, 108); */
     width: 250px;
-    height: 400px;
+    height: 420px;
     display: flex;
     flex-direction: column;
-    box-shadow: 1px 1px 20px rgb(139, 139, 139);
+    box-shadow: 1px 1px 20px rgba(139, 139, 139, 0.726);
 }
 
 .cont-card-img {
@@ -44,7 +44,9 @@
 
 .cont-card-btn button {
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid rgba(179, 179, 179, 0.753);
+    box-shadow: 1px 1px 10px rgba(139, 139, 139, 0.568);
+    border-radius: 3px;
     width: 90px;
     height: 40px;
     margin-top: 10px;
@@ -56,7 +58,8 @@
 .cont-card-btn button:hover {
     background-color: rgb(224, 160, 64);
     color: rgb(236, 236, 236);
-    border: 1px solid rgb(255, 255, 255);
+    border: none;
+    transform: translateY(-5px);
     transition: all .5s ease;
 }
 
