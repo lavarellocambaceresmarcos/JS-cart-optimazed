@@ -9,4 +9,6 @@ let stock = [
     {id:8, name: 'Northern Coffe',  price: 1800, img : 'img/demo.png'},
     {id:9, name: 'Almond Coffe',  price: 2300, img : 'img/demo.png'},
     {id:10, name: 'Chocolate Coffe',  price: 2500, img : 'img/demo.png'},
+    {id:11, name: 'Vanilla Coffe',  price: 1500, img : 'img/demo.png'},
+    {id:12, name: 'Luxury Coffe',  price: 3000, img : 'img/demo.png'},
 ]

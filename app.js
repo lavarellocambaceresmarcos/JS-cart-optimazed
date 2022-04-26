@@ -57,6 +57,8 @@ function showProducts (array) {
 }
 
 
+
+
 // Add to cart
 function addToCart (id) {
 
@@ -112,11 +114,10 @@ function showItems (addProduct) {
         <p>${addProduct.name}</p>
         <p>$${addProduct.price}</p>
         <p id="quantity${addProduct.id}">x${addProduct.unity}</p>
-        <button id="delete${addProduct.id}" class="del-btn"><i class="fa-solid fa-trash-can"></i></button>
+        <button id="delete${addProduct.id}" class="del-btn${addProduct.id}"><i class="fa-solid fa-trash-can"></i></button>
         `
     // Here we add the div to it's father
     modalContent.appendChild(cartProduct);
-
 
 
     // Deleting items from the cart
@@ -137,6 +138,25 @@ function showItems (addProduct) {
 
         // Update the local storage
         localStorage.setItem('cart', JSON.stringify(cart));
+    })
+
+
+
+    // PAY
+    payButton.addEventListener('click', function () {
+
+            // Cleaning all items in the cart
+            let btnDel = document.getElementById(`delete${addProduct.id}`);
+            console.log(btnDel);
+            btnDel.parentElement.remove();
+
+            // Data reset
+            cart = []
+            totalPrice.innerText = '0';
+            cartQuantity.innerText = '0';
+
+            // Update the local storage
+            localStorage.setItem('cart', JSON.stringify(cart));
     })
 
 }
@@ -170,27 +190,6 @@ function itemsAdded () {
 }
 
 
- // Pay button 
-
- payButton.addEventListener('click' , function () {
-    if (totalPrice.innerText > 0) {
-    
-        console.log('Thanks for the payment');
-        cart = []
-        totalPrice.innerText = '0';
-        cartQuantity.innerText = '0';
-        // Update the local storage
-        localStorage.setItem('cart', JSON.stringify(cart));
-        let delBtnButtons = document.getElementsByClassName('del-btn');
-        for (let i = 0; i < delBtnButtons.length; i++) {
-            delBtnButtons[i].parentElement.remove();
-        }
-
-    } else {
-        console.log('No items added to the cart');
-    }
-    
-})
 
 
 
