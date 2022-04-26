@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet"> 
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a3cedbb514.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="cont-logo">
+            <h1>Café Miró</h1>
+        </div>
+        <div class="cont-search">
+            <input type="text" id="search" placeholder="Search product">
+        </div>
+        <div class="cont-cart-icon">
+            <!-- Quantity cont -->
+            <button id="cart-btn"><i class="fa-solid fa-cart-shopping"></i><span id="cont-cart">0</span></button>
+        </div>
+    </header>
+
+    <main>
+        <div id="cover">
+
+        </div>
+
+        <!-- Banner -->
+        <div class="cont-banner">
+            <img src="img/about-banner-2.png" alt="">
+            <div class="cont-text-banner">
+                <h1>
+                    Welcome
+                </h1>
+                <a href="">Learn More</a>
+            </div>
+        </div>
+
+        <!-- From JS - Stock -->
+        <section id="cont-products">
+            <!-- All products added in stock -->
+        </section>
+
+    </main>
+
+    <div id="modal" class="remove">
+        <div id="content-modal" class="cart-dropdown">
+            <div class="cont-index-modal">
+                <h3>Cart</h3>
+                <button id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <!-- From JS - App -->
+            <div id="div-cont-prodAdded">
+                <!-- All products added to the cart -->
+            </div>
+
+            <div class="cont-total-pay">
+                <p>Precio total $<span id="total-price">0</span></p>
+                <button id="pay-button">Pay</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="stock.js"></script>
+    <!-- JS-2 -->
+    <script src="app.js"></script>
+    <!-- JS-3 -->
+    <script src="modal.js"></script>
+</body>
+
+</html>
