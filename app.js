@@ -1,9 +1,6 @@
 // Cart array
 let cart = [];
 
-// Search
-let search = document.getElementById('search');
-
 // Cart 
 let cartQuantity = document.getElementById('cont-cart');
 let totalPrice = document.getElementById('total-price');
@@ -28,10 +25,10 @@ function showProducts (array) {
         div.innerHTML += `
             <div class="card">
                 <div class="cont-card-img">
-                    <img src=${item.img} alt="">
+                    <img src=${item.img} alt="" class="card-img">
                 </div>
                 <div class="cont-card-info">
-                    <p>${item.name}</p>
+                    <p class="item-title">${item.name}</p>
                     <p>$${item.price}</p>
                 </div>
                 <div class="cont-card-btn">
@@ -39,6 +36,8 @@ function showProducts (array) {
                 </div>
             </div>
         `;
+
+        
 
         contProducts.appendChild(div);
 
@@ -190,13 +189,10 @@ function itemsAdded () {
 }
 
 
-
-
-
-
 // Storage
 storageSaving ();
 function storageSaving () {
+    // Guardamos la data
     let getData = JSON.parse(localStorage.getItem('cart'));
 
     if (getData) {
@@ -207,4 +203,45 @@ function storageSaving () {
         })
     }
 }
+
+
+
+
+
+// Searchbar 
+let cardCont = document.getElementsByClassName('card');
+let tittleCont = document.getElementsByClassName('cont-card-info');
+let titles = document.getElementsByClassName('item-title');
+
+let searchBar = document.getElementById('search');
+
+
+let testBtn = document.getElementById('test-btn');
+
+
+
+
+searchBar.addEventListener('keyup', function(e) {
+
+    const term = e.target.value.toLowerCase();
+    console.log(term);
+    
+    Array.from(titles).forEach(function (t) {
+
+        for(let i = 0; i < titles.length; i++) {
+            
+            if (titles[i].innerText.toLowerCase().includes(term)) {
+                // titles[i].parentElement.parentElement.style.background="red";
+                titles[i].parentElement.parentElement.parentElement.style.display="block";
+                console.log(titles[i].innerText.toLowerCase().includes(term));
+            }else {
+                titles[i].parentElement.parentElement.parentElement.style.display="none";
+            }
+        }
+
+        let itemstitles = t.innerText;
+
+        
+   })
+})
 
