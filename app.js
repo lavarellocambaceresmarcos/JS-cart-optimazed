@@ -14,6 +14,13 @@ let modalContent = document.getElementById('div-cont-prodAdded');
 let contProducts = document.getElementById('cont-products');
 
 
+// Timer 
+let timer = 0;
+
+
+// 2nd Timer 
+let scndTimer = 0;
+
 // Show Products 
 showProducts(stock);
 function showProducts (array) {
@@ -32,7 +39,7 @@ function showProducts (array) {
                     <p>$${item.price}</p>
                 </div>
                 <div class="cont-card-btn">
-                    <button id="add${item.id}">Add to cart</button>
+                    <button id="add${item.id}" class="addTocartButton">Add to cart</button>
                 </div>
             </div>
         `;
@@ -46,11 +53,33 @@ function showProducts (array) {
 
         // Adding items to the cart
         addBtn.addEventListener('click', function () {
-            alert("item added to cart");
+            let addtocartbuttons = document.getElementsByClassName('addTocartButton');
+
+            window.setInterval(function (){
+                timer++
+                // console.log(timer);
+                if(timer == 1) {
+                    Swal.fire({
+                        text: 'Item added to the cart',
+                        imageUrl:'img/alert-add-icon.png',
+                        imageWidth:'40%',
+                        width:'300px',
+                        confirmButtonText: 'Continue shopping',
+                        confirmButtonColor:'#D28B49',
+                        confirmButtonAriaLabel:'#E5B265',
+                        focusConfirm:'false'
+                    })
+                    
+                }
+            },300)
+
+            
             console.log('item ' + item.id +  ' was added to the cart');
 
             // Calling add to cart function
             addToCart(item.id);
+
+            timer=0;
         })
     });
 }
@@ -123,6 +152,8 @@ function showItems (addProduct) {
     let deleteBtn = document.getElementById(`delete${addProduct.id}`);
     deleteBtn.addEventListener('click', function () {
         console.log('clicked');
+        cartProduct.style.transform="rotate(.2turn) translate(-1000px, 0px)";
+        cartProduct.style.transition="all 2s ease";
 
         // We filter all elements that matches the asked condition --> removing the one that doesn't match it 
         cart = cart.filter(element => element.id != addProduct.id);
@@ -130,7 +161,15 @@ function showItems (addProduct) {
         console.log(cart);
 
         // We remove the element from the HTML
-        deleteBtn.parentElement.remove();
+
+        window.setInterval(function (){
+            timer++
+            // console.log(timer);
+            if(timer == 1) {
+                deleteBtn.parentElement.remove();
+                timer=0;
+            }
+        },999)
 
         // Update the quantity of products in the cart icon
         itemsAdded();
@@ -143,6 +182,36 @@ function showItems (addProduct) {
 
     // PAY
     payButton.addEventListener('click', function () {
+
+            if (totalPrice.innerText>0) {
+
+
+                window.setInterval(function (){
+                    scndTimer++
+                    // console.log(timer);
+                    if(scndTimer == 1) {
+                        // Alert payment
+                        Swal.fire({
+                            title: 'Thanks for the payment!',
+                            text: '"Not just coffee"',
+                            icon: 'success',
+                            confirmButtonText: 'Continue',
+                            confirmButtonColor:'#E5B265',
+                            confirmButtonAriaLabel:'#E5B265',
+                            focusConfirm:'false',
+                            timer:5000,
+                            timerProgressBar:'true',
+
+                        })
+                        
+                    }
+                },300)
+
+
+                scndTimer=0;
+
+                
+            }
 
             // Cleaning all items in the cart
             let btnDel = document.getElementById(`delete${addProduct.id}`);
@@ -219,8 +288,6 @@ let searchBar = document.getElementById('search');
 let testBtn = document.getElementById('test-btn');
 
 
-
-
 searchBar.addEventListener('keyup', function(e) {
 
     const term = e.target.value.toLowerCase();
@@ -231,7 +298,6 @@ searchBar.addEventListener('keyup', function(e) {
         for(let i = 0; i < titles.length; i++) {
             
             if (titles[i].innerText.toLowerCase().includes(term)) {
-                // titles[i].parentElement.parentElement.style.background="red";
                 titles[i].parentElement.parentElement.parentElement.style.display="block";
                 console.log(titles[i].innerText.toLowerCase().includes(term));
             }else {
@@ -245,3 +311,35 @@ searchBar.addEventListener('keyup', function(e) {
    })
 })
 
+
+
+
+// MODAL JS --> shopping cart js
+
+// Cart icon --> header
+let cartIconButton = document.getElementById('cart-btn');
+
+// Cart close button
+let closingCart = document.getElementById('close-cart');
+
+
+// cover 
+let cover = document.getElementById('cover');
+
+// Modal container
+let modalContainer = document.getElementById('modal');
+
+cartIconButton.addEventListener('click', function () {
+    console.log("you've opened the cart");
+    console.log(modalContainer);
+    modalContainer.className = "show";
+    cover.className="show-cover";
+
+})
+
+closeCart.addEventListener('click', function () {
+    console.log("you've closed the cart");
+    console.log(modalContainer);
+    modalContainer.className = "remove";
+    cover.className="remove";
+})

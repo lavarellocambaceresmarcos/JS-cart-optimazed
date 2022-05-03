@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet"> 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/a3cedbb514.js" crossorigin="anonymous"></script>
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
@@ -22,14 +24,16 @@
             <h1>Café Miró</h1>
         </div>
         <div class="cont-search">
-            <input type="text" id="search" placeholder="Search product">
+            <input type="search" id="search" placeholder="Search for a product">
         </div>
         <div class="cont-cart-icon">
             <!-- Quantity cont -->
             <button id="cart-btn"><i class="fa-solid fa-cart-shopping"></i><span id="cont-cart">0</span></button>
         </div>
     </header>
+    <div class="false-bg">
 
+    </div>
     <main>
         <div id="cover">
 
@@ -66,18 +70,18 @@
             </div>
 
             <div class="cont-total-pay">
-                <p>Precio total $<span id="total-price">0</span></p>
+                <p>Total price $<span id="total-price">0</span></p>
                 <button id="pay-button">Pay</button>
             </div>
         </div>
     </div>
-
+    
+    <!-- SWEET ALERT -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- JS -->
     <script src="stock.js"></script>
     <!-- JS-2 -->
     <script src="app.js"></script>
-    <!-- JS-3 -->
-    <script src="modal.js"></script>
 </body>
 
 </html>

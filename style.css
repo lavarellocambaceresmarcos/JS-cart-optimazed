@@ -67,20 +67,22 @@
 
 .cont-total-pay button {
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid rgb(214, 214, 214);
     width: 90px;
     height: 40px;
-    margin-top: 10px;
     cursor: pointer;
+    font-weight: bolder;
     border-radius: 2px;
     transition: all .5s ease;
 }
 
 .cont-total-pay button:hover {
-    background-color: rgb(11, 150, 34);
+    background-color: rgba(48, 167, 67, 0.575);
     color: rgb(236, 236, 236);
     border: 1px solid rgb(255, 255, 255);
-    transition: all .5s ease;
+    transition: all 1s ease;
+    font-weight: bolder;
+    transform: translateY(-5px);
 }
 
 .product {
@@ -100,6 +102,7 @@ header {
     z-index: 2;
     width: 100%;
     position: fixed;
+    box-shadow: 0px 0px 10px rgba(71, 71, 71, 0.562);
 }
 
 .cont-logo {
@@ -107,6 +110,7 @@ header {
     display: flex;
     justify-content: space-evenly;
     color: #fff;
+    text-shadow: 0px 0px 1px #00000082;
 }
 
 .cont-search {
@@ -117,15 +121,33 @@ header {
 .cont-search input {
     width: 100%;
     height: 30px;
-    border: none;
-    border-radius: 5px;
+    /* border: none;
+    border-radius: 5px; */
     padding-left: 20px;
+    border-bottom: 2px solid #ffffff4d;
+    background: transparent;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: #fff;
+}
+
+.cont-search input::placeholder {
+    color: white;
+}
+
+.cont-search input:focus {
+    outline: none;
 }
 
 .cont-cart-icon {
     flex: 1;
     display: flex;
     justify-content:center;
+}
+
+#cont-cart {
+    color: #fff;
 }
 
 .cont-cart-icon button {
@@ -137,8 +159,9 @@ header {
 }
 
 .cont-cart-icon i {
-    color: white;
+    color: #ffffffea;
     margin-right: 5px;
+    text-shadow: 0px 0px 5px rgb(199, 199, 199);
 }
 
 
@@ -159,6 +182,7 @@ header {
     font-size: 40px;
     color: #fff;
     top:30%;
+    text-shadow: 0px 5px 1px #4444441e;
 }
 
 .cont-text-banner a {
@@ -169,12 +193,18 @@ header {
     border-radius: 10px;
     transition: all 1s ease;
     box-shadow: 1px 1px 3px rgb(90, 90, 90);
+    font-size: 30px;
+    box-shadow: inset 0px 0px 0px rgba(197, 113, 44, 0.548);
 }
 
 .cont-text-banner a:hover {
-    background-color: rgb(214, 138, 76);
-    transition: all 1s ease;
+    background-color: transparent;
+    box-shadow: inset 100px 100px 100px rgba(197, 113, 44, 0.548);
+    transition: all 1s ease-out;
+    transform: translateY(5px);
+    
 }
+
 
 .cont-banner img {
     width: 100%;
@@ -199,7 +229,7 @@ main {
     position: absolute;
     z-index: 5;
     filter: opacity(.4);
-    background-color: rgb(145, 145, 145);
+    background-color: rgb(142, 116, 86);
 }
 
 #cont-products {
@@ -213,39 +243,62 @@ main {
 /* Modal */
 
 .cart-dropdown {
-    /* background-color: rgb(111, 221, 111); */
-    width: 50%;
-    box-shadow: 1px 1px 20px rgb(139, 139, 139);
-    background-color: rgba(240, 237, 229, 0.753);
-    border-radius: 5px;
+    width: 30%;
+    height: 80vh;
+    overflow-y: scroll;
+    box-shadow: 0px 0px 5px rgba(138, 138, 138, 0.438);
+    background-color: rgb(255, 255, 255);
+}
+
+.cart-dropdown {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.cart-dropdown::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 .cont-index-modal {
-    /* background-color: rgb(127, 235, 235); */
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    color: rgb(219, 219, 219);
-    background-color: rgba(121, 121, 121, 0.719);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    background-color: rgba(192, 139, 95, 0.863);
 }
 
 .cont-index-modal  button{
     background-color: transparent;
     border: none;
-    color: rgb(219, 219, 219);
+    color: #fff;
     font-size: 20px;
     cursor: pointer;
 }
 
+#div-cont-prodAdded {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5vh;
+}
+
 .prod-in-cart {
-    /* background-color: rgb(171, 115, 223); */
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    width: 100%;
-    border-bottom: 1px solid rgb(180, 176, 176);
-    margin-bottom: 5px;
+    width: 80%;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px #85858580;
+    transition: all 1s ease;
 }
+
+/* .prod-in-cart:hover {
+    transform: rotate(.02turn) translate(-200px, 0px);
+    transition: all 1s ease;
+} */
 
 .prod-in-cart button {
     background: transparent;
@@ -262,13 +315,21 @@ main {
 }
 
 .cont-total-pay p, .cont-total-pay button {
-    margin: 20px;
+    margin-top: 10px;
+}
+.cont-total-pay button {
+    margin-bottom: 40px;
 }
 
-
 .remove {
-    position: absolute;
+    transition: all 1s ease;
+    position: fixed;
     top:-200%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    z-index: 100000;
 }
 
 .show {
@@ -277,12 +338,15 @@ main {
     position: fixed;
     width: 100%;
     top:15%;
-    z-index: 100000;
+    z-index: 5;
     transition: all 1s ease;
 }
 
+.false-bg {
+    height: 80px;
+}
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:980px) {
     
 #cont-products {
     grid-template-columns: 1fr 1fr;
@@ -290,6 +354,20 @@ main {
 
 .cont-banner .cont-text-banner {
     font-size: 20px;
+}
+
+.cont-text-banner a {
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.cont-logo h1 {
+    font-size: 20px;
+}
+
+
+.cart-dropdown {
+    width: 70%;
 }
 
 }
@@ -303,4 +381,14 @@ main {
     font-size: 20px;
 }
 
+.cont-text-banner a {
+    font-size: 10px;
+}
+
+}
+
+@media screen and (max-width:490px) {
+    .cart-dropdown {
+        width: 90%;
+    }
 }
