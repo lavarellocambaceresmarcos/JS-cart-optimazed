@@ -21,6 +21,10 @@ let timer = 0;
 // 2nd Timer 
 let scndTimer = 0;
 
+
+// 3rd Timer
+let thrdTimer = 0;
+
 // Show Products 
 showProducts(stock);
 function showProducts (array) {
@@ -163,13 +167,14 @@ function showItems (addProduct) {
         // We remove the element from the HTML
 
         window.setInterval(function (){
-            timer++
+            thrdTimer++
             // console.log(timer);
-            if(timer == 1) {
+            if(thrdTimer == 1) {
                 deleteBtn.parentElement.remove();
-                timer=0;
             }
-        },999)
+        },300)
+
+        thrdTimer = 0;
 
         // Update the quantity of products in the cart icon
         itemsAdded();
