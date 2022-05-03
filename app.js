@@ -172,9 +172,11 @@ function showItems (addProduct) {
             if(thrdTimer == 1) {
                 deleteBtn.parentElement.remove();
             }
+
+            thrdTimer = 0;
         },300)
 
-        thrdTimer = 0;
+        
 
         // Update the quantity of products in the cart icon
         itemsAdded();
