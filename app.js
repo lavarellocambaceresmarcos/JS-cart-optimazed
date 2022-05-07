@@ -71,7 +71,7 @@ function showProducts (array) {
                         confirmButtonText: 'Continue shopping',
                         confirmButtonColor:'#D28B49',
                         confirmButtonAriaLabel:'#E5B265',
-                        focusConfirm:'false'
+                        focusConfirm:'false',
                     })
                     
                 }

@@ -6,6 +6,8 @@
 }
 
 
+
+
 .card {
     /* background-color: rgb(226, 108, 108); */
     width: 250px;
@@ -295,10 +297,6 @@ main {
     transition: all 1s ease;
 }
 
-/* .prod-in-cart:hover {
-    transform: rotate(.02turn) translate(-200px, 0px);
-    transition: all 1s ease;
-} */
 
 .prod-in-cart button {
     background: transparent;
@@ -346,6 +344,304 @@ main {
     height: 80px;
 }
 
+
+
+
+
+
+/* FORM STYLES */
+
+#format {
+    display: none;
+}
+
+
+#testTwo, #test {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: rgba(171, 125, 99, 1);
+    color: #fff;
+    box-shadow: 0px 0px 5px rgba(37, 37, 37, 0.5);
+    transition: all 1s ease;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 5px;
+}
+
+#comment {
+    background-color: rgba(255, 255, 255, 0.678);
+    border: none;
+}
+
+
+.onClick {
+    border: 2px solid rgba(251, 212, 177, 1);
+}
+
+.borderNone {
+    border: none;
+}
+
+.cont-form {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(192, 139, 95, 0.863);
+    color: #fff;
+    width: 250px;
+    border-radius:5px;
+    height: 350px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.642);
+}
+
+.submit-btn {
+    margin: 20px;
+    height: 40px;
+    width: 100px;
+    background-color: rgba(210, 139, 73, 1);
+    border: none;
+    font-weight: bolder;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 1s ease;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.326);
+}
+
+.submit-btn:hover {
+        transform: translateY(-3px);
+        transition: all 1s ease;
+        background-color: rgba(216, 163, 114, 0.719);
+        color: #fff;
+        border:none;
+}
+
+
+textarea {
+    resize: none;
+    width: 80%;
+    height: 100px;
+}
+
+.title {
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.326);
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+
+/* ANIMATION FORM */
+#number, #value {
+    display: none;
+}
+
+#main-form-container {
+    position: fixed;
+    top: -100vh;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 2s ease;
+}
+
+
+/* message face */
+
+#dateInput {
+    display: none;
+}
+
+
+.none {
+    display: none;
+}
+
+.showingBackface{
+    background-color: rgba(210, 164, 117, 1);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    filter: opacity(1);
+    transition: all 1s ease;
+    animation: showing 1s ease;
+}
+
+.form-not-showing {
+    opacity: 0;
+}
+
+
+@keyframes showing {
+
+    100% {
+        filter: opacity(1);
+    }
+
+
+    50% {
+        filter: opacity(0.7);
+    }
+
+
+    0% {
+        filter: opacity(0.3);
+    }
+    
+}
+
+#grats-face h2 {
+    color:#fff;
+}
+
+#close {
+    position:absolute;
+    right: 0;
+    top: 0;
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.check-container img{
+    height: 25px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+
+}
+
+.bar-top, .bar-bottom {
+    color: #fff;
+    width: 80px;
+}
+
+.bar-top {
+    position: absolute;
+    top: 35%;
+    left: 2vw;
+    animation: bar-top-animation 2s ease;
+}
+
+@keyframes bar-top-animation {
+    100% {
+        transform: translateX(0px);
+    }
+    0% {
+        transform: translateX(300px);
+    }
+}
+ 
+.bar-bottom {
+    position: absolute;
+    bottom: 35%;
+    right: 2vw;
+    animation: bar-bottom-animation 2s ease;
+}
+
+@keyframes bar-bottom-animation {
+    100% {
+        transform: translateX(0px);
+    }
+    0% {
+        transform: translateX(-300px);
+    }
+}
+
+.message-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+/* Date y and z elements */
+
+#yElement, #zElement {
+    display: none;
+}
+
+
+/* EY pop button */
+
+#pupUpButton {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+   height: 75px;
+   width: 80px;
+   perspective: 500px;
+   border: none;
+   background-color: transparent;
+}
+
+.main-pop-cont {
+    width: 100%;
+    height: 100%;
+    transition: all 2s ease;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    background-color: rgba(192, 139, 95, 0.863);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.388);
+    border-radius: 50%;
+    position: relative;
+}
+
+.main-pop-cont:hover {
+    transform: rotateY(360deg);
+}
+
+.cont-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: translateZ(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-2 {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-2 p {
+    color: #fff;
+    font-size: 8px;
+}
+
+.btn-img {
+    height: 40%;
+}
+
+
+
+
 @media screen and (max-width:980px) {
     
 #cont-products {
@@ -369,6 +665,7 @@ main {
 .cart-dropdown {
     width: 70%;
 }
+
 
 }
 @media screen and (max-width:600px) {
